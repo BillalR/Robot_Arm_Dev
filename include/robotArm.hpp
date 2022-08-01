@@ -2,6 +2,10 @@
 #include <Arduino.h>
 #include <vector>
 #include <math.h>
+// Defines
+#define ARM_JOINTS 4
+#define POSE_M 4
+#define POSE_N 4
 
 /**
  * Robot Arm Class
