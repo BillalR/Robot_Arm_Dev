@@ -93,15 +93,16 @@ void Arm::homing(std::vector<std::vector<std::vector<float> > > &armJointVec)
  * @param tx x translation (mm)
  * @param ty y translation (mm)
  * @param tz z translation (mm)
- * @return 4x4 matrice that reflects the pose coordinates
+ * @return Link Vector
  */
-std::vector<std::vector<float>> Arm::createLink(float rx, float ry, float rz, float tx, float ty, float tz)
+std::vector<std::vector<float> > Arm::createLink(float rx, float ry, float rz, float tx, float ty, float tz)
 {
-    // Multi-dimensional vector
-    std::vector<std::vector<float>> Link = {
+    // Multi-dimensional pose vector assignment
+    std::vector<std::vector<float> > Link = {
         {cos(rz) * cos(ry), cos(rz) * sin(ry) * sin(rx) - sin(rz) * cos(rx), cos(rz) * sin(ry) * cos(rx) + sin(rz) * sin(rx), tx},
         {sin(rz) * cos(ry), sin(rz) * sin(ry) * sin(rx) + cos(rz) * cos(rx), sin(rz) * sin(ry) * cos(rx) - cos(rz) * sin(rx), ty},
-        {(float)-1.0 * sin(ry), cos(ry) * sin(rx), cos(ry) * cos(rx), tz}
+        {(float)-1.0 * sin(ry), cos(ry) * sin(rx), cos(ry) * cos(rx), tz},
+        {0, 0, 0, 1}
         };
 
     return Link;
