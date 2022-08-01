@@ -19,7 +19,8 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   // Initialize Serial Comms
-  Serial.begin(SERIAL);
+  Serial.begin(BAUD_RATE);
+
 }
 
 void loop() {
