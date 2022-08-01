@@ -12,6 +12,14 @@ Date: 2022-07-29
 // Constructor
 Arm::Arm()
 {
+    // TODO --> Create an initializer that reads current servo values
+    // Assign link initial values
+    armJointVec[0] = {createLink(0, 0, 0, 0, 0, 0)};
+    armJointVec[1] = {createLink(0, 0, 200, 0, 0, 0)};
+    armJointVec[2] = {createLink(0, 100, 0, 0, 0, 0)};
+    armJointVec[3] = {createLink(100, 0, 0, 0, 0, 0)};
+}
+
 
 }
 
