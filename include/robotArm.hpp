@@ -30,7 +30,11 @@ class Arm{
         std::vector<std::vector<std::vector<float> > > armJointVec{ARM_JOINTS, std::vector<std::vector<float> >{POSE_M, std::vector<float>{POSE_N}}};
 
         // Function prototypes
-        std::vector<std::vector<float>> createLink(float rx, float ry, float rz, float tx, float ty, float tz);
+        std::vector<std::vector<float> > createLink(float rx, float ry, float rz, float tx, float ty, float tz);
+        void update(std::vector<std::vector<std::vector<float> > > &joint);
+        void homing(std::vector<std::vector<std::vector<float> > > &armJointVec);
+        void printVector();
+        void moveServo(std::vector<std::vector<std::vector<float>>> &armJointVec);
 };
 
 
