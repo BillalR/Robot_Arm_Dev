@@ -20,6 +20,30 @@ Arm::Arm()
     armJointVec[3] = {createLink(100, 0, 0, 0, 0, 0)};
 }
 
+void Arm::printVector()
+{
+    unsigned short int n = armJointVec.size();
+    unsigned short int M = armJointVec[0].size();
+    unsigned short int N = armJointVec[0][0].size();
+
+    for(unsigned short int i = 0; i < n; i++)
+    {
+        for(unsigned short int j = 0; j < M; j++)
+        {
+            for(unsigned short int k = 0; k < N; k++)
+            {
+                Serial.print(armJointVec[i][j][k]);
+                Serial.print("    ");
+            }
+            Serial.println(" ");
+        }
+        Serial.println(" ");
+        Serial.print("End of Joint ");
+        Serial.print(i + 1);
+        Serial.println(" ");
+        Serial.println(" ");
+    }
+}
 
 }
 
