@@ -26,6 +26,9 @@ class Arm{
         // Deconstructor
         ~Arm();
 
+        // Variable definitions
+        std::vector<std::vector<std::vector<float> > > armJointVec{ARM_JOINTS, std::vector<std::vector<float> >{POSE_M, std::vector<float>{POSE_N}}};
+
         // Function prototypes
         std::vector<std::vector<float>> createLink(float rx, float ry, float rz, float tx, float ty, float tz);
 };
