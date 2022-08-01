@@ -68,6 +68,15 @@ void Arm::update(std::vector<std::vector<std::vector<float> > > &joint)
     }
 }
 
+/**
+ * Robot homing routine --> Robot arm is upright in the vertical direction
+ * 
+ * @param armJointVec pass the current vector set of pose transformations (3D)
+ * @return Void
+ */
+void Arm::homing(std::vector<std::vector<std::vector<float> > > &armJointVec)
+{
+    return;
 }
 
 /**
