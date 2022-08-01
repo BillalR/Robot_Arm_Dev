@@ -108,6 +108,18 @@ std::vector<std::vector<float> > Arm::createLink(float rx, float ry, float rz, f
     return Link;
 }
 
+/**
+ * Servo move routine based on the robot arm link set pose
+ * 
+ * @param armJointVec pass the current vector set of pose transformations
+ * @return Void
+ */
+
+void Arm::moveServo(std::vector<std::vector<std::vector<float> > > &armJointVec)
+{
+    return;
+}
+
 
 // Deconstructor
 Arm::~Arm()
