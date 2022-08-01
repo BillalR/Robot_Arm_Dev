@@ -9,7 +9,10 @@
 #include "robotArm.hpp"
 
 // Defines
-#define SERIAL 115200
+#define BAUD_RATE 115200
+
+// Class object inititalizer
+Arm robotArm;
 
 void setup() {
   // Pin mode setups
