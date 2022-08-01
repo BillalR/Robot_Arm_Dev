@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include <vector>
 #include <math.h>
+#include "vectorMath.hpp"
 // Defines
 #define ARM_JOINTS 4
 #define POSE_M 4
