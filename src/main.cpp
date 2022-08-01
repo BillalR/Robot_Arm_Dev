@@ -1,6 +1,12 @@
 // Includes
 #include <Arduino.h>
 #include <stdio.h>
+#include <vector>
+#include <string>
+#include <iostream>
+
+// User defined hpp includes
+#include "robotArm.hpp"
 
 // Defines
 #define SERIAL 115200
