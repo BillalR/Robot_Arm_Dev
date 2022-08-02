@@ -15,9 +15,9 @@ Arm::Arm()
     // TODO --> Create an initializer that reads current servo values
     // Assign link initial values
     armJointVec[0] = {createLink(0, 0, 0, 0, 0, 0)};
-    armJointVec[1] = {createLink(0, 0, 200, 0, 0, 0)};
-    armJointVec[2] = {createLink(0, 100, 0, 0, 0, 0)};
-    armJointVec[3] = {createLink(100, 0, 0, 0, 0, 0)};
+    VecMult(armJointVec[0], createLink(0, 0, 200, 0, 0, 0), armJointVec[0]);
+    VecMult(armJointVec[1], createLink(0, 0, 200, 0, 0, 0), armJointVec[1]);
+    VecMult(armJointVec[2], createLink(0, 0, 200, 0, 0, 0), armJointVec[2]);
 }
 
 void Arm::printVector()
