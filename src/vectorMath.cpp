@@ -21,11 +21,15 @@ Date: 2022-07-29
 void VecMult(std::vector<std::vector<float> > VecA, std::vector<std::vector<float> > VecB, std::vector<std::vector<float> > &result)
 {
     unsigned short int M = VecA.size();
-    unsigned short int N = VecA[0].size();
+    unsigned short int N = VecB.size();
 
     if(M != N)
     {
         Serial.println("Matrix size mismatch");
+        Serial.println("Rows: ");
+        Serial.println(M);
+        Serial.println("Cols: ");
+        Serial.println(N);
         return;
     }
     
