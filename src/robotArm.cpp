@@ -62,10 +62,12 @@ void Arm::update(std::vector<std::vector<std::vector<float> > > &joint)
 
     
     // Peform link matrix multiplication
+    /*
     for(unsigned short int i = 0; i < n - 1; i++)
     {
         VecMult(joint[i], joint[i + 1], joint[i + 1]);
     }
+    */
 }
 
 /**
