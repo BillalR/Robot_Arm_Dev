@@ -32,7 +32,7 @@ void VecMult(std::vector<std::vector<float> > VecA, std::vector<std::vector<floa
         Serial.println(N);
         return;
     }
-    
+
     for(unsigned short int i = 0; i < M; i++)
     {
         for(unsigned short int j = 0; j < N; j++)
