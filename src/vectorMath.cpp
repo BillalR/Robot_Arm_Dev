@@ -23,6 +23,12 @@ void VecMult(std::vector<std::vector<float> > VecA, std::vector<std::vector<floa
     unsigned short int M = VecA.size();
     unsigned short int N = VecA[0].size();
 
+    if(M != N)
+    {
+        Serial.println("Matrix size mismatch");
+        return;
+    }
+    
     for(unsigned short int i = 0; i < M; i++)
     {
         for(unsigned short int j = 0; j < N; j++)

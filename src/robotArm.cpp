@@ -57,9 +57,6 @@ void Arm::update(std::vector<std::vector<std::vector<float> > > &joint)
     unsigned short int n = joint.size(); // Number of joints
     unsigned short int M = joint[0].size(); // Number of Rows
     unsigned short int N = joint[0][0].size(); // Number of Columns
-
-    // TODO --> Handle exception if M and N do not match
-
     
     // Peform link matrix multiplication
     /*
