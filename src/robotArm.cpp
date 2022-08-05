@@ -13,6 +13,7 @@ Date: 2022-07-29
 Arm::Arm()
 {
     // TODO --> Create an initializer that reads current servo values
+    // TODO --> Better name for armJointVec, as it stores the HT vectors
     // Assign link initial values
     armJointVec[0] = {createHT(0, 0, 0, 0, 0, 0)};
     VecMult(armJointVec[0], createHT(0, 0, 200, 0, 0, 0), armJointVec[1]);
