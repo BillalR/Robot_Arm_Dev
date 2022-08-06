@@ -61,9 +61,21 @@ void loop() {
     delay(15);
   }
 
+  for(int i = 0; i <= 180; i++)
+  {
+    Shoulder.writePos(i);
+    delay(15);
+  }
+
   for(int i = 180; i>=0; i--)
   {
     Base.writePos(i);
+    delay(15);
+  }
+
+  for(int i = 180; i>=0; i--)
+  {
+    Shoulder.writePos(i);
     delay(15);
   }
 
