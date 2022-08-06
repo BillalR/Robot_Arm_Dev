@@ -14,7 +14,7 @@
 
 // Internal MCU PWM parameters
 #define PWM_RES 16
-#define PWM_RES_WIDTH 65535
+#define PWM_RES_WIDTH 65536
 #define PWM_CHAN 0
 
 
