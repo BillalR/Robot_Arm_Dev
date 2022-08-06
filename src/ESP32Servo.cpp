@@ -31,10 +31,14 @@ void Servo::writePos(int pos)
 
     this-> pos = pos;
 
-    double transferFunction = this->pos*((uS_MAX_TIME-uS_MIN_TIME)/ROT_PER_uS) + uS_MIN_TIME;
+    double transferFunction = (double)this->pos*(((double)uS_MAX_TIME-(double)uS_MIN_TIME)/(double)ROT_PER_uS) + (double)uS_MIN_TIME;
+
+    Serial.println(transferFunction);
 
     uint32_t DC = ceil(this->rotConstant * transferFunction);
     
+    Serial.println(DC);
+
     ledcWrite(PWM_CHAN, DC);
     
 }
