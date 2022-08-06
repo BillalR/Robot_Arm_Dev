@@ -9,21 +9,34 @@ Date: 2022-07-29
 
 #include "ESP32Servo.hpp"
 
+
+// Global Initializations
+int Servo::pwmChannel = 0;
+
 // Constructor
 Servo::Servo()
 {
     this->rotConstant = (double)PWM_RES_WIDTH / (double)uS_PWM_WIDTH;
+    this->pwmChannel++;
+    this->currentChannel = this->pwmChannel;
+
+    if(this->pwmChannel > 15)
+    {
+        delete this;
+
+        Serial.println("Current Object Deleted, Exceeded Max Servos");
+    }
 }
 
 void Servo::freqSetup(int pwmFreq)
 {
-    ledcSetup(PWM_CHAN, pwmFreq, PWM_RES);
+    ledcSetup(this->currentChannel, pwmFreq, PWM_RES);
 }
 
 void Servo::attach(int pin)
 {
     this->pin = pin;
-    ledcAttachPin(pin, PWM_CHAN);
+    ledcAttachPin(pin, this->currentChannel);
 }
 
 void Servo::writePos(int pos)
@@ -39,11 +52,11 @@ void Servo::writePos(int pos)
     
     Serial.println(DC);
 
-    ledcWrite(PWM_CHAN, DC);
+    ledcWrite(this->currentChannel, DC);
     
 }
 // Deconstructor
 Servo::~Servo()
 {
-
+    this->pwmChannel--;
 }
