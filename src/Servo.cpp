@@ -7,7 +7,7 @@ Email: billalrahimi@hotmail.com
 Date: 2022-07-29
 */
 
-#include "ESP32Servo.hpp"
+#include "Servo.hpp"
 
 
 // Global Initializations
@@ -16,7 +16,7 @@ int Servo::pwmChannel = 0;
 // Constructor
 Servo::Servo()
 {
-    this->rotConstant = (double)PWM_RES_WIDTH / (double)uS_PWM_WIDTH;
+    this->gain = (double)PWM_RES_WIDTH / (double)uS_PWM_WIDTH;
     this->pwmChannel++;
     this->currentChannel = this->pwmChannel;
 
@@ -39,22 +39,42 @@ void Servo::attach(int pin)
     ledcAttachPin(pin, this->currentChannel);
 }
 
+void Servo::homeServo()
+{
+    writePos(180);
+}
+
 void Servo::writePos(int pos)
 { 
 
-    this-> pos = pos;
-
-    double transferFunction = (double)this->pos*(((double)uS_MAX_TIME-(double)uS_MIN_TIME)/(double)ROT_PER_uS) + (double)uS_MIN_TIME;
-
-    Serial.println(transferFunction);
-
-    uint32_t DC = ceil(this->rotConstant * transferFunction);
+    if(pos < 0)
+    {
+        this->pos = sqrt(pow((float) pos, 2));
+    }else
+    {
+        this-> pos = pos;
+    }
     
-    Serial.println(DC);
+    
+    uint32_t DC = calculateDC(this->pos, this->gain);
 
     ledcWrite(this->currentChannel, DC);
     
 }
+
+float Servo::getCurrentPos()
+{
+    return pos;
+}
+
+uint32_t Servo::calculateDC(int pos, double gain)
+{
+    double transferFunction = (double)pos*(((double)uS_MAX_TIME-(double)uS_MIN_TIME)/(double)ROT_PER_uS) + (double)uS_MIN_TIME;
+
+    return ceil(gain * transferFunction);
+
+}
+
 // Deconstructor
 Servo::~Servo()
 {

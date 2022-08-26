@@ -29,10 +29,14 @@ class Servo{
     private:
         // Variables
         int pos;
-        double rotConstant;
         int pin;
-        static int pwmChannel;
         int currentChannel;
+        static int pwmChannel;
+        double gain;
+        
+        // Functions
+        uint32_t calculateDC(int pos, double gain);
+
     // Class public params
     public:
         // Constructor
@@ -48,6 +52,8 @@ class Servo{
         void freqSetup(int pwmFreq);
         void attach(int pin);
         void writePos(int pos);
+        float getCurrentPos();
+        void homeServo();
         
 };
 
