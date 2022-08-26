@@ -4,7 +4,7 @@
 #include <math.h>
 #include "vectorMath.hpp"
 // Defines
-#define ARM_JOINTS 2
+#define ARM_JOINTS 4
 #define POSE_M 4
 #define POSE_N 4
 #define LINK_M 4

@@ -24,7 +24,8 @@ Arm::Arm()
     // Assign Link physical length and rotation parameters
     linkVec[0] = {{0}, {0}, {0}, {1}};
     linkVec[1] = {{0}, {inches(7)}, {0}, {1}};
-
+    linkVec[2] = {{0}, {inches(7)}, {0}, {1}};
+    linkVec[3] = {{0}, {inches(7)}, {0}, {1}};
 
 }
 
