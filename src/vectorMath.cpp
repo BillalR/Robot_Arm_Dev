@@ -26,9 +26,7 @@ void VecMult(std::vector<std::vector<float> > VecA, std::vector<std::vector<floa
     if(M != N)
     {
         Serial.println("Matrix size mismatch");
-        Serial.println("Rows: ");
         Serial.println(M);
-        Serial.println("Cols: ");
         Serial.println(N);
         return;
     }
