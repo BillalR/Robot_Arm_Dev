@@ -23,9 +23,9 @@ Arm::Arm()
 
     // Assign Link physical length and rotation parameters
     linkVec[0] = {{0}, {0}, {0}, {1}};
-    linkVec[1] = {{0}, {inches(7)}, {0}, {1}};
-    linkVec[2] = {{0}, {inches(7)}, {0}, {1}};
-    linkVec[3] = {{0}, {inches(7)}, {0}, {1}};
+    //linkVec[1] = {{0}, {inches(7)}, {0}, {1}};
+    //linkVec[2] = {{0}, {inches(7)}, {0}, {1}};
+    //linkVec[3] = {{0}, {inches(7)}, {0}, {1}};
 
 }
 
@@ -40,8 +40,8 @@ void Arm::move(float tx, float ty, float tz)
 {
     // Update 
     // Assign transformation matrices initial values based on servo homing position
-    transVec[0] = {createHT(0, 0, 0, 0, 0, 180)};
-    VecMult(transVec[0], createHT(inches(tx), inches(ty), inches(tz), 0, 0, 180), transVec[1]);
+    //transVec[0] = {createHT(0, 0, 0, 0, 0, 180)};
+    //VecMult(transVec[0], createHT(inches(tx), inches(ty), inches(tz), 0, 0, 180), transVec[1]);
 
     Serial.println("added values");
     update();
