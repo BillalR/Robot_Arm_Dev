@@ -62,9 +62,9 @@ void Servo::writePos(int pos)
     
 }
 
-float Servo::getCurrentPos()
+int Servo::getCurrentPos()
 {
-    return pos;
+    return (int)this->pos;
 }
 
 uint32_t Servo::calculateDC(int pos, double gain)

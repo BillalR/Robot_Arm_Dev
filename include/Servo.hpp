@@ -52,7 +52,7 @@ class Servo{
         void freqSetup(int pwmFreq);
         void attach(int pin);
         void writePos(int pos);
-        float getCurrentPos();
+        int getCurrentPos();
         void homeServo();
         
 };
